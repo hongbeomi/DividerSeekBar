@@ -1,4 +1,4 @@
-<h1 align="center">DividerSeekBar</h1></br>
+<h1 align="center">DividerSeekBar</h1>
 
 <h4 align="center">📐 customizable seebar with separator.</h4>
 
