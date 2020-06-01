@@ -8,7 +8,7 @@
 
 ## 🚀 how to include to your project?
 
-![license](https://img.shields.io/github/license/hongbeomi/DividerSeekBar?color=blue&logo=apache) ![android CI](https://img.shields.io/github/workflow/status/hongbeomi/DividerSeekBar/Android%20CI?label=Android%20CI&logo=github) ![api](https://img.shields.io/badge/API-21%2B-darkgreen.svg?style=flat&logo=android)[![](https://jitpack.io/v/hongbeomi/DividerSeekBar.svg)](https://jitpack.io/#hongbeomi/DividerSeekBar)
+![license](https://img.shields.io/github/license/hongbeomi/DividerSeekBar?color=blue&logo=apache) ![android CI](https://img.shields.io/github/workflow/status/hongbeomi/DividerSeekBar/Android%20CI?label=Android%20CI&logo=github) ![api](https://img.shields.io/badge/API-21%2B-darkgreen.svg?style=flat&logo=android) [![](https://jitpack.io/v/hongbeomi/DividerSeekBar.svg)](https://jitpack.io/#hongbeomi/DividerSeekBar)
 
 ### Gradle
 
