@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         dividerSeekBar_test.apply {
             max = 10
-            setTextLocationMode(DividerSeekBar.TEXT_LOCATION_TOP)
+            setTextLocationMode(DividerSeekBar.TEXT_LOCATION_BOTTOM)
 //            setTextInterval(10)
             setTextColor(R.color.black)
             setTextSize(R.dimen.sp_12)
@@ -30,16 +30,16 @@ class MainActivity : AppCompatActivity() {
             setOnDividerSeekBarChangeStateListener(
                 object : DividerSeekBar.OnDividerSeekBarChangeStateListener {
                     override fun onProgressEnabled(dividerSeekBar: DividerSeekBar, progress: Int) {
-                        textView_test.apply {
-                            text = "$progress :: ON!"
-                            setTextColor(resources.getColor(R.color.light_blue_600))
-                        }
+//                        textView_test.apply {
+//                            text = "$progress :: ON!"
+//                            setTextColor(resources.getColor(R.color.light_blue_600))
+//                        }
                     }
                     override fun onProgressDisabled(dividerSeekBar: DividerSeekBar, progress: Int) {
-                        textView_test.apply {
-                            text = "$progress :: OFF!"
-                            setTextColor(resources.getColor(R.color.black))
-                        }
+//                        textView_test.apply {
+//                            text = "$progress :: OFF!"
+//                            setTextColor(resources.getColor(R.color.black))
+//                        }
                     }
                 })
         }
