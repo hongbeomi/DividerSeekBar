@@ -8,12 +8,7 @@ import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.widget.SeekBar
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.annotation.DimenRes
-import androidx.annotation.DrawableRes
-import github.hongbeomi.dividerseekbar.DividerTextLocation.*
-import github.hongbeomi.dividerseekbar.DividerActiveMode.*
+import androidx.annotation.*
 
 class DividerSeekBar
 @JvmOverloads constructor(
@@ -25,9 +20,28 @@ class DividerSeekBar
     private var mWidth: Int? = null
     private var mHeight: Int? = null
 
+    companion object {
+
+        @IntDef(ACTIVE_MODE_TARGET, ACTIVE_MODE_MINIMUM, ACTIVE_MODE_MAXIMUM)
+        @Retention(AnnotationRetention.SOURCE)
+        annotation class ActiveMode
+
+        const val ACTIVE_MODE_TARGET = 0
+        const val ACTIVE_MODE_MINIMUM = 1
+        const val ACTIVE_MODE_MAXIMUM = 2
+
+        @IntDef(TEXT_LOCATION_TOP, TEXT_LOCATION_BOTTOM)
+        @Retention(AnnotationRetention.SOURCE)
+        annotation class TextLocation
+
+        const val TEXT_LOCATION_BOTTOM = 0
+        const val TEXT_LOCATION_TOP = 1
+
+    }
+
     private var mTextPaint: Paint? = null
     private var mTextRect: Rect? = null
-    private var mTextLocationMode = BOTTOM
+    private var mTextLocationMode = TEXT_LOCATION_BOTTOM
     private var mTextInterval: Int = 1
         set(value) {
             if (value == 0) {
@@ -62,7 +76,7 @@ class DividerSeekBar
     private var mThumbActivatedDrawable: Drawable =
         resources.getDrawable(R.drawable.bg_thumb_activated)
 
-    private var mActiveMode = MINIMUM
+    private var mActiveMode = ACTIVE_MODE_MINIMUM
     private var mActivateTargetValue: Int = 0
     private var mActivatedEventSwitch: Boolean = true
     private var mIsActivated: Boolean = false
@@ -171,9 +185,9 @@ class DividerSeekBar
                     R.styleable.DividerSeekBar_dividerActivatedTargetValue,
                     mActivateTargetValue
                 )
-            mActiveMode = DividerActiveMode.values()[getInt(R.styleable.DividerSeekBar_dividerActiveMode, mActiveMode.ordinal)]
+            mActiveMode = getInt(R.styleable.DividerSeekBar_dividerActiveMode, mActiveMode)
 
-            mTextLocationMode = DividerTextLocation.values()[getInt(R.styleable.DividerSeekBar_dividerTextLocationMode, mTextLocationMode.ordinal)]
+            mTextLocationMode = getInt(R.styleable.DividerSeekBar_dividerTextLocationMode, mTextLocationMode)
             mTextInterval = getInt(R.styleable.DividerSeekBar_dividerTextInterval, mTextInterval)
 
             mTextSize = getDimension(
@@ -274,10 +288,10 @@ class DividerSeekBar
         }
     }
 
-    private fun getTextLocationY(mode: DividerTextLocation): Float {
+    private fun getTextLocationY(@TextLocation mode: Int): Float {
         return when(mode) {
-            BOTTOM -> height.toFloat() - resources.getDimension(R.dimen.dp_1)
-            TOP -> height.toFloat() - (height / 5 * 4).toFloat()
+            TEXT_LOCATION_BOTTOM -> height.toFloat() - resources.getDimension(R.dimen.dp_1)
+            TEXT_LOCATION_TOP -> height.toFloat() - (height / 5 * 4).toFloat()
             // when other integer, set text location bottom mode
             else -> height.toFloat() - resources.getDimension(R.dimen.dp_1)
         }
@@ -285,16 +299,16 @@ class DividerSeekBar
 
     private fun getIsActivatedByActiveMode(progress: Int): Boolean {
         return when(mActiveMode) {
-            DividerActiveMode.TARGET -> progress == mActivateTargetValue
-            DividerActiveMode.MAXIMUM -> progress <= mActivateTargetValue
-            MINIMUM -> progress >= mActivateTargetValue
+            ACTIVE_MODE_TARGET -> progress == mActivateTargetValue
+            ACTIVE_MODE_MAXIMUM -> progress <= mActivateTargetValue
+            else -> progress >= mActivateTargetValue
         }
     }
 
     /**
      * text setting
      */
-    fun setTextLocationMode(mode: DividerTextLocation) {
+    fun setTextLocationMode(@TextLocation mode: Int) {
         mTextLocationMode = mode
         invalidate()
     }
@@ -385,7 +399,7 @@ class DividerSeekBar
         mActivateTargetValue = targetValue
     }
 
-    fun setActiveMode(mode: DividerActiveMode) {
+    fun setActiveMode(@ActiveMode mode: Int) {
         mActiveMode = mode
     }
 
