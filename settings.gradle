@@ -1,0 +1,3 @@
+include ':DividerSeekBar'
+include ':app'
+rootProject.name = "DividerSeekBarDemo"

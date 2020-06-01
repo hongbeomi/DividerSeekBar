@@ -1,0 +1,24 @@
+<resources>
+    <declare-styleable name="DividerSeekBar">
+        <attr name="dividerTextSize" format="dimension" />
+        <attr name="dividerTextColor" format="color|reference" />
+        <attr name="dividerTextInterval" format="integer" />
+        <attr name="dividerTextLocationMode" format="flags">
+            <flag name="bottom" value="0" />
+            <flag name="top" value="1" />
+        </attr>
+        <attr name="dividerColor" format="color|reference" />
+        <attr name="dividerStrokeWidth" format="dimension" />
+        <attr name="dividerSeaLineColor" format="color|reference" />
+        <attr name="dividerSeaLineStrokeWidth" format="dimension" />
+        <attr name="dividerActivatedTargetValue" format="integer" />
+        <attr name="dividerActiveMode" format="flags">
+            <flag name="target" value="0"/>
+            <flag name="minimum" value="1"/>
+            <flag name="maximum" value="2"/>
+        </attr>
+        <attr name="dividerThumbDefaultDrawable" format="reference|color" />
+        <attr name="dividerThumbActivatedDrawable" format="reference|color" />
+        <attr name="dividerSetActivatedEvent" format="boolean" />
+    </declare-styleable>
+</resources>
