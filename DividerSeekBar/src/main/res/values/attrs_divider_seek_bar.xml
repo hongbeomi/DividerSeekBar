@@ -13,9 +13,9 @@
         <attr name="dividerSeaLineStrokeWidth" format="dimension" />
         <attr name="dividerActivatedTargetValue" format="integer" />
         <attr name="dividerActiveMode" format="flags">
-            <flag name="target" value="0"/>
-            <flag name="minimum" value="1"/>
-            <flag name="maximum" value="2"/>
+            <flag name="target" value="0" />
+            <flag name="minimum" value="1" />
+            <flag name="maximum" value="2" />
         </attr>
         <attr name="dividerThumbDefaultDrawable" format="reference|color" />
         <attr name="dividerThumbActivatedDrawable" format="reference|color" />
