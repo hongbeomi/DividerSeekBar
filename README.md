@@ -80,7 +80,7 @@ dividerSeekBar.setTextInterval(10) // set text interval of divider
 
 |          Location: BOTTOM<br/> TEXT_LOCATION_BOTTOM          |             Location: TOP<br/>TEXT_LOCATION_TOP              |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/text_bottom.png" width="33%"/> | <img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/text_top.png" width="33%"/> |
+| <img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/text_bottom.png" width="100%"/> | <img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/text_top.png" width="100%"/> |
 
 </br>
 
@@ -129,13 +129,13 @@ dividerSeekBar.setActivateTargetValue(3) // set target value
 
 |         Mode : ACTIVE_MODE_TARGET<br>TargetValue : 3         |        Mode : ACTIVE_MODE_MINIMUM<br/>TargetValue : 3        |        Mode : ACTIVE_MODE_MAXIMUM<br/>TargetValue : 3        |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <image src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/target_mode.gif" width="33%"/> | <image src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/minimum_mode.gif" width="33%"/> | <image src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/maximum_mode.gif" width="33%"/> |
+| <image src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/target_mode.gif" width="100%"/> | <image src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/minimum_mode.gif" width="100%"/> | <image src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/maximum_mode.gif" width="100%"/> |
 
 </br>
 
 ### onProgressEnabled, onProgressDisabled
 
-<img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/listener_divider_seek_bar.gif" aligh="right" width="32%"/> We can hear DividerSeekBar when it is active and when it is not active, and we can listen it using the listener. 
+<img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/listener_divider_seek_bar.gif" align="right" width="32%"/> We can hear DividerSeekBar when it is active and when it is not active, and we can listen it using the listener. 
 
 ```kotlin
 dividerSeekBar.setOnDividerSeekBarChangeStateListener(
