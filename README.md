@@ -1,6 +1,6 @@
 <h1 align="center">DividerSeekBar</h1>
 
-<h4 align="center">📐 customizable seebar with separator.</h4>
+<h4 align="center">📐 customizable seekbar with separator.</h4>
 
 <img src="https://github.com/hongbeomi/DividerSeekBar/blob/master/demo/bg-divider-seek-bar.png" width="100%"></img>
 
