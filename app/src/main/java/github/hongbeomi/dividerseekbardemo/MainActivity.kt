@@ -12,10 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dividerSeekBar = DividerSeekBar(this).apply {
-
-        }
-
         dividerSeekBar_test.apply {
             max = 100
             setOffActivatedEvent()
@@ -29,21 +25,21 @@ class MainActivity : AppCompatActivity() {
             setDividerInterval(10)
             setDividerColor(R.color.light_blue_600)
             setDividerStrokeWidth(R.dimen.dp_1)
-            setThumbDefaultDrawable(R.drawable.bg_thumb_default)
-            setThumbActivatedDrawable(R.drawable.bg_thumb_activated)
+            setThumbDefaultDrawable(R.drawable.bg_cat_b)
+            setThumbActivatedDrawable(R.drawable.bg_cat_a)
             setActiveMode(DividerSeekBar.ACTIVE_MODE_MINIMUM)
-            setActivateTargetValue(30)
+            setActivateTargetValue(50)
             setOnDividerSeekBarChangeStateListener(
                 object : DividerSeekBar.OnDividerSeekBarChangeStateListener {
                     override fun onProgressEnabled(dividerSeekBar: DividerSeekBar, progress: Int) {
                         textView_test.apply {
-                            text = "$progress :: ON!"
+                            text = "$progress"
                             setTextColor(resources.getColor(R.color.light_blue_600))
                         }
                     }
                     override fun onProgressDisabled(dividerSeekBar: DividerSeekBar, progress: Int) {
                         textView_test.apply {
-                            text = "$progress :: OFF!"
+                            text = "$progress"
                             setTextColor(resources.getColor(R.color.black))
                         }
                     }
